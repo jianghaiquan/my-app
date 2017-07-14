@@ -1,0 +1,10 @@
+<div style="text-align: center;">
+  <h2>Hero List</h2>
+  <p><i>Pick a hero from the list</i></p>
+  <ul>
+    <li *ngFor="let hero of heroes" (click)="selectHero(hero)">
+      <button [routerLink]="['/hero/'+hero.id]">{{hero.name}}</button>
+    </li>
+  </ul>
+</div>
+
