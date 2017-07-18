@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input} from "@angular/core";
 import {Hero} from "../hero/hero";
 
 @Component({
@@ -12,13 +12,15 @@ import {Hero} from "../hero/hero";
 export class HeroCreateComponent implements OnInit {
 
   sexes: string[] = ['male', 'female'];
+  submitted: boolean = false;
 
-  @Input() herod: Hero;
+  herod: Hero;
 
   constructor() {
   }
 
   ngOnInit() {
+    this.herod = new Hero('', 'male','');
   }
 
   newHero(){
@@ -26,7 +28,8 @@ export class HeroCreateComponent implements OnInit {
   }
 
   onSubmit(hero){
-    //test
+    this.submitted = true;
     console.log(hero);
   }
+
 }

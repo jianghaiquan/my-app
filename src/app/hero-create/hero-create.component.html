@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [hidden]="submitted">
   <h1>Create Hero</h1>
   <form (ngSubmit)="onSubmit(formHero.value)" #formHero="ngForm">
     <div class="form-group">
@@ -19,6 +19,24 @@
       </select>
     </div>
     <button type="button" class="btn btn-default" (click)="newHero();">New Hero</button>
+    <button type="button" class="btn btn-default" [routerLink]="['/heroes']">Back</button>
     <button type="submit" class="btn btn-success" [disabled]="!formHero.form.valid">submit</button>
   </form>
+</div>
+<div [hidden]="!submitted">
+  <h2>You submitted the following:</h2>
+  <div class="row">
+    <div class="col-xs-3">name</div>
+    <div class="col-xs-9  pull-left">{{ herod.name }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">power</div>
+    <div class="col-xs-9 pull-left">{{ herod.power }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">sex</div>
+    <div class="col-xs-9 pull-left">{{ herod.sex }}</div>
+  </div>
+  <br>
+  <button class="btn btn-primary" (click)="submitted=false">Edit</button>
 </div>

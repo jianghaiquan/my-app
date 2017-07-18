@@ -1,11 +1,9 @@
 <div class="container">
-  <div><label>hero id:</label>{{hero.id}}</div>
-  <div><label>hero name:</label> {{hero.name}}</div>
-  <div><label>hero power:</label> {{hero.power}}</div>
-  <div><label>hero sex:</label> {{hero.sex}}</div>
+  <div><label>hero id:</label>{{hero?.id}}</div>
+  <div><label>hero name:</label> {{hero?.name}}</div>
+  <div><label>hero power:</label> {{hero?.power}}</div>
+  <div><label>hero sex:</label> {{hero?.sex}}</div>
 
   <button class="btn btn-default" [routerLink]="['/heroes']">go back</button>
-
-
 </div>
-<hero-create [herod]="hero"></hero-create>
+<!--<hero-create [herod]="hero"></hero-create>-->
